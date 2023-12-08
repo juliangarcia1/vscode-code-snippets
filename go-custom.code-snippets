@@ -128,6 +128,19 @@
           "}"
         ]
       },
+      //iota constant
+      "iota constant": {
+        "prefix": "iota",
+        "body": [
+            "const (",
+            "\t${1:Constant1} = iota",
+            "\t${2:Constant2}",
+            "\t${3:Constant3}",
+            "\t// Add more constants as needed",
+            ")"
+        ],
+        "description": "Create iota constants"
+      },
       // Design patterns
       "singleton": {
 		"prefix": "singleton",
