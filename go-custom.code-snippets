@@ -141,6 +141,43 @@
         ],
         "description": "Create iota constants"
       },
+      //interface
+      "interface": {
+          "prefix": "interface",
+          "body": [
+              "type ${1|InterfaceName|MyInterface|}${1} interface {",
+              "\t${2:MethodName}() ${3|ReturnType|error}",
+              "\t// Add more methods as needed",
+              "}",
+          ],
+          "description": "Create a Go interface"
+      } 
+      //interface and implementation
+      "interface and implementation": {
+        "prefix": "interface",
+        "body": [
+            "type ${1|InterfaceName|MyInterface|}${1} interface {",
+            "\t${2:Method1}() ${3|ReturnType1|error}",
+            "\t${4:Method2}(${5|param1|arg1} ${6|ParamType1|int}) ${7|ReturnType2|string}",
+            "\t// Add more methods as needed",
+            "}",
+            "",
+            "type ${8|StructName|MyStruct|}${8} struct {}",
+            "",
+            "func (s *${8|StructName|MyStruct|}) ${2:Method1}() ${3|ReturnType1|error} {",
+            "\t// Implementation for ${2:Method1}",
+            "\treturn ${9|nil|errors.New(\"Not implemented\")}",
+            "}",
+            "",
+            "func (s *${8|StructName|MyStruct|}) ${4:Method2}(${5|param1|arg1} ${6|ParamType1|int}) ${7|ReturnType2|string} {",
+            "\t// Implementation for ${4:Method2}",
+            "\treturn ${10|\"\", nil|\"Not implemented\", errors.New(\"Not implemented\")}",
+            "}",
+            "",
+            "// Add more methods implementations as needed",
+        ],
+        "description": "Create interface and its implementation"
+    }
       // Design patterns
       "singleton": {
 		"prefix": "singleton",
